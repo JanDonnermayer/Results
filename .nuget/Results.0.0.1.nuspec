@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Results</id>
+    <version>0.0.1</version>
+    <authors>Jan Donnermayer</authors>
+    <owners>Jan Donnermayer</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE</license>
+    <description>Framework for working with Results in .NET</description>
+    <summary>
+      Framework for working with Results in .NET
+    </summary>
+    <releaseNotes>
+    </releaseNotes>
+    <projectUrl>https://github.com/JanDonnermayer/Results</projectUrl>
+    <repository type="git" url="https://github.com/JanDonnermayer/Results"/>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\src\Results\bin\release\netstandard2.0\Results.dll" target="lib\netstandard2.0\Results.dll" />
+    <file src="..\src\Results\bin\release\netstandard2.0\Results.xml" target="lib\netstandard2.0\Results.xml" />
+    <file src="..\LICENSE" target="LICENSE" />
+  </files>
+</package>
