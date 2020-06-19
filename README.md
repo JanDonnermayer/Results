@@ -1,3 +1,3 @@
 # Results
 
-Framework for working with Results in C#
+Framework for working with Results in .NET
