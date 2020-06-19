@@ -8,7 +8,7 @@
 
   <PropertyGroup>
     <id>Results</id>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <Authors>Jan Donnermayer</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>A Framework for working with results in .NET.</Description>

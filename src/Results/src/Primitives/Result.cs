@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Results
 {
     [DebuggerStepThrough]
-    internal static class Result
+    public static class Result
     {
         public static IResult<TData> Ok<TData>(TData data) where TData : class =>
             new Result<TData>(data ?? throw new ArgumentNullException(nameof(data)), null);
@@ -17,7 +17,7 @@ namespace Results
     }
 
     [DebuggerStepThrough]
-    internal sealed class Result<TData> : IResult<TData> where TData : class
+    public sealed class Result<TData> : IResult<TData> where TData : class
     {
         internal Result(TData? data = null, Exception? exception = null)
         {
