@@ -1,0 +1,95 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Results.sln",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary",
+                "-c:Release"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "nuget.pack",
+            "command": "nuget",
+            "type": "process",
+            "dependsOn": [
+                "build",
+                "test"
+            ],
+            "args": [
+                "pack",
+                "${workspaceFolder}/.nuget/Results.${input:packageVersion}.nuspec",
+                "-OutputDirectory",
+                "${workspaceFolder}/.nuget/"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "nuget.pack.local",
+            "command": "nuget",
+            "type": "process",
+            "dependsOn": [
+                "build",
+                "test"
+            ],
+            "args": [
+                "pack",
+                "${workspaceFolder}/.nuget/Results.${input:packageVersion}.nuspec",
+                "-OutputDirectory",
+                "C:/Users/${env:USERNAME}/.nuget/packages.local/Results/"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "test",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/test/Results.Test/Results.Test.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/src/Results/Results.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/src/Results/Results.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "packageVersion",
+            "description": "Specify package version.",
+            "default": "0.0.0"
+        }
+    ]
+}
