@@ -7,6 +7,43 @@
             "type": "process",
             "args": [
                 "build",
+                "${workspaceFolder}/app/Results.SampleApp/Results.SampleApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/app/Results.SampleApp/Results.SampleApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/app/Results.SampleApp/Results.SampleApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
                 "${workspaceFolder}/Results.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary",
@@ -82,14 +119,6 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
-        }
-    ],
-    "inputs": [
-        {
-            "type": "promptString",
-            "id": "packageVersion",
-            "description": "Specify package version.",
-            "default": "0.0.0"
         }
     ]
 }

@@ -32,4 +32,5 @@ namespace Results
 
         public TData? Data { get; }
     }
+
 }
